@@ -10,7 +10,8 @@ const NOT_FOUND_PATH = "./404.html"
 //CREATE SERVER
 http.createServer((req, res) => {
 
-let parse = req.url;
+//REQ.URL EQUALS TO /..? AKA NOTHING? THEN SHOW INDEX.HTML
+let parse = req.url == "/" ? "/index.html" : req.url;
 
 //READ .HTML FILES IN ROOT DIRECTORY
 
